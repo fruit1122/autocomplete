@@ -1,0 +1,11 @@
+{
+  "name": "autocomplete",
+  "version": "0.1.0",
+  "description": "autocomplete component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fruit1122",
+  "license": "ISC"
+}
