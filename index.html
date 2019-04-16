@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <style link="./src/autocomplete.css"></style>
+    <link rel="stylesheet" type="text/css" href="./src/autocomplete.css">
+    <script src="./src/autocomplete.js" ></script>
+    <title>AutoComplete App</title>
+  </head>
+  <body onload="load(event);">
+    <input type="text" />
+    <script>
+        function load(event){
+            var auto = new AutoComplete('input',{
+                selectFirst: true,
+                datas : [
+                        "Albania",
+                        "Andorra",
+                        "Armenia",
+                        "Austria",
+                        "Azerbaijan",
+                        "Belarus",
+                        "Belgium",
+                        "Bosnia & Herzegovina",
+                        "Bulgaria",
+                        "Croatia",
+                        "Cyprus",
+                        "Czech Republic",
+                        "Denmark",
+                        "Estonia",
+                        "Finland",
+                        "France",
+                        "Georgia",
+                        "Germany",
+                        "Greece",
+                        "Hungary",
+                        "Iceland",
+                        "Ireland",
+                        "Italy",
+                        "Kosovo",
+                        "Latvia",
+                        "Liechtenstein",
+                        "Lithuania",
+                        "Luxembourg",
+                        "Macedonia",
+                        "Malta",
+                        "Moldova",
+                        "Monaco",
+                        "Montenegro",
+                        "Netherlands",
+                        "Norway",
+                        "Poland",
+                        "Portugal",
+                        "Romania",
+                        "Russia",
+                        "San Marino",
+                        "Serbia",
+                        "Slovakia",
+                        "Slovenia",
+                        "Spain",
+                        "Sweden",
+                        "Switzerland",
+                        "Turkey",
+                        "Ukraine",
+                        "United Kingdom",
+                        "Vatican City"
+                    ],
+            });
+        }
+    </script>
+  </body>
+</html>
