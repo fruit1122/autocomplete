@@ -11,7 +11,7 @@ Property
 -------------
 
 | property | type | desc |
-|:--------|:--------:|:--------|
+|:--------|:--------|:--------|
 | datas | Array | 자동완성 데이터 리스트 |
 | ajax | Function(term:String, callback:Function) | Ajax 통신을 데이터 검색 데이터 조회 후, callback 함수를 수행하여 Autocomponent 수행 |
 | selectFirst | Boolean | 첫 아이템 선택 여부 |
