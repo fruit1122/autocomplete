@@ -91,7 +91,15 @@ AutoComplete.prototype._keyUpEvent = function(event){
 	// var keycode = (event.keyCode ? event.keyCode : event.which);
 	var cur = event.target.value;
 	if(this.pre !== cur &&  /[a-zA-Z가-힣0-9]$/.test(cur)){
-		this._createSuggetion(cur);
+		// ajax property가 있을 시, ajax 통신 수행 후, 값 셋팅
+		if(this.opt.ajax && this.opt.ajax instanceof Function){
+			this.opt.ajax.call(null,cur, (function(datas){
+				this.opt.datas = datas;
+				this._createSuggetion(cur);
+			}).bind(this));
+		} else {
+			this._createSuggetion(cur);
+		}
 		//방향키 입력
 	}else if('' === cur){
 		this.pre = cur;
@@ -188,7 +196,8 @@ AutoComplete.prototype._createSuggetion = function(cur){
 };
 
 AutoComplete.prototype._selectValue = function(idx){
-	this.pre = this.opt.datas[parseInt(idx)];
+	if(this.opt.renderItem && this.opt.renderItem instanceof Function) this.pre = this.opt.renderItem(this.opt.datas[parseInt(idx)]);
+	else this.pre = this.opt.datas[parseInt(idx)];
 	this.input.value  = this.pre;
 	this.suggetion.className = 'autocomplete-suggetions hide';
 };
